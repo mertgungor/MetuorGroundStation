@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="688.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="689.0" prefWidth="1112.0" VBox.vgrow="ALWAYS">
+         <children>
+            <AnchorPane layoutX="171.0" prefHeight="170.0" prefWidth="595.0" style="-fx-background-color: #333645;">
+               <children>
+                  <Button layoutX="9.0" layoutY="46.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="129.0" stylesheets="@stylesheet.css" text="video aktarımını " />
+                  <Button layoutX="152.0" layoutY="46.0" mnemonicParsing="false" onAction="#test" stylesheets="@stylesheet.css" text="manuel ayrılma" />
+                  <Label layoutX="16.0" layoutY="102.0" style="-fx-background-color: #fff;" styleClass="text" text="TAKIM NO" textFill="#141414">
+                     <stylesheets>
+                        <URL value="@stylesheet.css" />
+                        <URL value="@stylesheet.css" />
+                     </stylesheets>
+                  </Label>
+                  <Label layoutX="96.0" layoutY="102.0" style="-fx-background-color: #fff;" text="PAKET NO" textFill="#141414" />
+                  <Label layoutX="169.0" layoutY="102.0" style="-fx-background-color: #fff;" stylesheets="@stylesheet.css" text="GÖNDERİM SAATİ" textFill="#141414" />
+                  <TextField layoutX="16.0" layoutY="131.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField layoutX="96.0" layoutY="131.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField layoutX="169.0" layoutY="131.0" prefHeight="25.0" prefWidth="97.0" />
+                  <Button fx:id="openFolder" layoutX="347.0" layoutY="98.0" mnemonicParsing="false" onAction="#openFolder" stylesheets="@stylesheet.css" text="DOSYA AÇ" />
+                  <Button layoutX="321.0" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" stylesheets="@stylesheet.css" text="AÇ" />
+                  <Button layoutX="385.0" layoutY="131.0" mnemonicParsing="false" stylesheets="@stylesheet.css" text="ÇALIŞTIR" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="171.0" prefHeight="583.0" prefWidth="170.0" styleClass="sidebar" stylesheets="@stylesheet.css">
+               <children>
+                  <Label layoutX="47.0" layoutY="38.0" style="-fx-background-color: #fff;" styleClass="text" stylesheets="@stylesheet.css" text="YÜKSEKLİK" textFill="#141414" />
+                  <Label layoutX="47.0" layoutY="114.0" style="-fx-background-color: #fff;" text="BASINÇ " textFill="#141414" />
+                  <Label layoutX="47.0" layoutY="200.0" style="-fx-background-color: #fff;" text=" SICAKLIK" textFill="#141414" />
+                  <Label layoutX="47.0" layoutY="280.0" style="-fx-background-color: #fff;" text="İNİŞ HIZI" textFill="#141414" />
+                  <Label layoutX="47.0" layoutY="367.0" style="-fx-background-color: #fff;" text="PİL GERİLİMİ" textFill="#141414" />
+                  <TextField layoutX="45.0" layoutY="67.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField layoutX="45.0" layoutY="138.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField layoutX="45.0" layoutY="224.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField layoutX="45.0" layoutY="304.0" prefHeight="25.0" prefWidth="56.0" />
+                  <TextField layoutX="45.0" layoutY="391.0" prefHeight="25.0" prefWidth="56.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="bar" fx:id="videoPane" layoutX="766.0" prefHeight="170.0" prefWidth="327.0" styleClass="videoPane" stylesheets="@stylesheet.css">
+               <children>
+                  <Button layoutX="36.0" layoutY="33.0" mnemonicParsing="false" onAction="#startTransfering" stylesheets="@stylesheet.css" text="AKTARIMI BAŞLAT" />
+                  <Button layoutX="38.0" layoutY="77.0" mnemonicParsing="false" onAction="#stopTransfering" stylesheets="@stylesheet.css" text="AKTARIMI DURDUR" />
+                  <ProgressBar fx:id="progress" layoutX="36.0" layoutY="121.0" prefWidth="200.0" progress="0.0" />
+               </children>
+            </AnchorPane>
+            <LineChart fx:id="temperature" animated="false" layoutX="171.0" layoutY="177.0" prefHeight="277.0" prefWidth="304.0" title="Temperature versus Time">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="temperature" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <LineChart fx:id="hight" animated="false" layoutX="171.0" layoutY="466.0" prefHeight="277.0" prefWidth="304.0" title="Hight versus Time">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="hight" side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="pressure" animated="false" layoutX="469.0" layoutY="177.0" prefHeight="277.0" prefWidth="304.0" title="Pressure versus Time">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="pressure" side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="voltage" animated="false" layoutX="469.0" layoutY="466.0" prefHeight="277.0" prefWidth="304.0" title="Voltage versus Time">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="voltage" side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="velocity" animated="false" layoutX="778.0" layoutY="177.0" prefHeight="277.0" prefWidth="304.0" title="Velocity versus Time">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="velocity" side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="line" animated="false" layoutX="778.0" layoutY="466.0" prefHeight="277.0" prefWidth="304.0" title="Line Graph Example">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="line" side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <ImageView fitHeight="177.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ModelUydu.png" />
+               </image>
+            </ImageView>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

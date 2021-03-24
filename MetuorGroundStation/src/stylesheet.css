@@ -1,0 +1,20 @@
+.parent{
+    -fx-background-color: #fff;
+}
+.sidebar{
+    -fx-background-color: #333645;
+}
+.button{
+    -fx-background-color: #b3e0ff;
+    -fx-border-radius: 100%;
+    -fx-border-width: 3px;
+}
+.text{
+    -fx-background-color: #fff;
+    -fx-border-radius: 100%;
+    -fx-border-width: 3px;
+}
+.videoPane{
+    -fx-background-color: #001f33;
+}
+
